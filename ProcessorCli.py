@@ -2,7 +2,7 @@ import click
 import click_pathlib
 from pathlib import Path
 
-from ProcessorV2 import Processor, ValidatedTdf
+from Processor import Processor, ValidatedTdf
 from simplemdx.declparser import mdxParser
 
 ### NUEVO
