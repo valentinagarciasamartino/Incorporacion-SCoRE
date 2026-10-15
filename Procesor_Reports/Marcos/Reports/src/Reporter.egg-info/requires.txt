@@ -1,0 +1,7 @@
+Click
+numpy
+plotly
+weasyprint
+scipy
+matplotlib
+click-pathlib

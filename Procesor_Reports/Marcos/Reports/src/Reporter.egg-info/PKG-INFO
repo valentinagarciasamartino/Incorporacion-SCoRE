@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: Reporter
+Version: 0.1.0
+Summary: Build PDF reports for FLENI's gaitlab
+Keywords: gaitlab,report,pdf

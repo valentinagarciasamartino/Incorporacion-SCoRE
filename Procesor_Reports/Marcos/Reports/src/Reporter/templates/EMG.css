@@ -1,0 +1,109 @@
+@page {
+    size: letter;
+    margin: 2cm 2cm 2cm 2cm;
+}
+
+.container {
+   -webkit-column-count: 3;
+      -moz-column-count: 3;
+           column-count: 3;
+
+   -webkit-column-gap: 1%;
+      -moz-column-gap: 1%;
+           column-gap: 1%;
+	   font-size: x-small;
+	   width: 100%;
+	   text-align: left;
+}
+
+.table-striped tbody tr {
+    font-family: Interstate-Light;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+img {
+    /* height: 120px; */
+    font-family: Interstate-Light;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main_plot {
+    font-family: Interstate-Light;
+    height: 300%;
+    width: 100%;
+}
+
+.main_logo {
+    width: 20%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header_table {
+    text-align: center;
+    color: rgb(0, 87, 174);
+    font-size: medium;
+    width: 100%;
+    font-family: Interstate-Light;
+}
+
+.tr {
+    text-align: left;
+    color: black;
+    font-size: small;
+    font-family: Interstate-Light;
+}
+
+.tdl {
+    text-align: left;
+    color: black;
+    font-size: small;
+    font-family: Interstate-Light;
+}
+
+.tdr {
+    text-align: right;
+    color: rgb(0, 87, 174);
+    font-size: small;
+    font-family: Interstate-Light;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(0, 87, 174);
+    font-size: xx-large;
+    font-family: Interstate-Light;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(0, 87, 174);
+    font-size: x-large;
+    font-family: Interstate-Light;
+}
+
+h3 {
+    text-align: left;
+    color: rgb(0, 87, 174);
+    font-size: x-large;
+    font-family: Interstate-Light;
+}
+
+footer {
+    font-size: smaller;
+    font-family: Interstate-Light;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+p {
+    font-size: smaller;
+    font-family: Interstate-Light;
+}

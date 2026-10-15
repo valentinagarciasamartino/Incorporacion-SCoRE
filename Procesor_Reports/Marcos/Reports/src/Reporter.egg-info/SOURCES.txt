@@ -1,0 +1,16 @@
+MANIFEST.in
+pyproject.toml
+setup.cfg
+setup.py
+src/Reporter/Equinus.py
+src/Reporter/Figures.py
+src/Reporter/Reporter.py
+src/Reporter/ReporterCli.py
+src/Reporter/__init__.py
+src/Reporter/functions.py
+src/Reporter.egg-info/PKG-INFO
+src/Reporter.egg-info/SOURCES.txt
+src/Reporter.egg-info/dependency_links.txt
+src/Reporter.egg-info/entry_points.txt
+src/Reporter.egg-info/requires.txt
+src/Reporter.egg-info/top_level.txt
