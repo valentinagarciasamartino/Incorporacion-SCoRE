@@ -1,0 +1,17 @@
+# Implementación de SCoRE
+numpy
+scipy
+basictdf
+matplotlib
+scikit-learn
+bayesian-optimization
+
+# Integración con el laboratorio
+colorlog
+click
+click-pathlib
+simplemdx
+plotly
+weasyprint
+snapshot-pyppeteer
+pyecharts
