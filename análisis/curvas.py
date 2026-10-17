@@ -1,47 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-correr_todos_curvas.py
 Corre comparar_hh_score.py para TODAS las subcarpetas de pacientes de una
-carpeta madre, salteando las que arrancan con "no" (igual que correr_todos.py
-con score_hjc.py).
-
-A diferencia de score_hjc.py, comparar_hh_score.py ya busca los .emt de
-forma recursiva (encontrar_pares hace carpeta.rglob("*.emt")), asi que en
-teoria podrias apuntarlo directo a la carpeta madre sin este script. La
-razon para tener este script aparte es:
-  - Si UN paciente tiene un .emt corrupto o mal nombrado, que no tire abajo
-    el analisis de todos los demas (se salta ese paciente y sigue).
-  - Poder ver, igual que con correr_todos.py, un resumen de que pacientes
-    aportaron datos (OK) y cuales no (sin pares _hh/_score, o error al
-    parsear) al terminar la corrida.
-  - Dejar un log paciente por paciente en --out, igual que antes.
+carpeta madre, salteando las que arrancan con "no".
 
 Tiene que estar en la MISMA carpeta que comparar_hh_score.py, porque lo
 importa como modulo (no le toca nada, solo usa sus funciones).
 
-Genera las mismas salidas que comparar_hh_score.py, pero acumuladas a
-traves de TODOS los pacientes procesados:
   --out-dir : 12 PNG en total, dos por angulo:
               - diff_<angulo>.png: el promedio HH, el promedio SCoRE y su
-                diferencia, un subplot por lado (R/L). Promedia TODOS los
-                walkings juntos (un paciente con mas walkings pesa mas).
+                diferencia, un subplot por lado (R/L). 
               - diff_promedio_pacientes_<angulo>.png: solo la curva de
-                diferencia, con su media +- 1 SD *entre pacientes* (cada
-                paciente cuenta una sola vez, sin importar cuantos
-                walkings tenga), R y L superpuestos en el mismo panel.
+                diferencia, con su media +- 1 SD 
   --out-csv : una fila por paciente/walking/lado/angulo con RMSE, diferencia
               media y diferencia maxima.
-  --out     : log de texto con el detalle paciente por paciente (que
-              walkings encontro, cuales fallaron y por que).
+  --out     : log de texto con el detalle paciente por paciente.
 
 Uso:
     python correr_todos_curvas.py --carpeta "/ruta/a/Carpetas de pacientes" \\
         --out-dir graficos --out-csv resumen.csv --out log.txt
-
-    # saltea carpetas que arranquen con otro prefijo (default "no")
-    python correr_todos_curvas.py --carpeta "/ruta/..." --out-dir graficos \\
-        --out-csv resumen.csv --out log.txt --prefijo-excluido descartado
 """
 
 import argparse
@@ -62,20 +39,6 @@ import comparar_hh_score as chs
 
 
 def procesar_patient(carpeta_paciente, diffs, curvas_hh, curvas_score, diffs_por_paciente, filas_csv, log):
-    """
-    Busca los pares _hh/_score dentro de la carpeta de UN paciente, y
-    acumula sus curvas en los diccionarios globales (mismos que arma
-    comparar_hh_score.analizar, pero aca se llenan paciente a paciente
-    para poder loguear el progreso y aislar errores).
-
-    diffs_por_paciente ademas guarda, por separado, las curvas de
-    diferencia agrupadas por paciente (paciente -> lista de curvas, una
-    por cada uno de sus walkings), para poder despues colapsar cada
-    paciente a UNA curva y calcular la media +- SD *entre pacientes*
-    (sin que un paciente con mas walkings pese mas que uno con menos).
-
-    Devuelve la cantidad de walkings que efectivamente aportaron datos.
-    """
     pares = chs.encontrar_pares(carpeta_paciente)
     if not pares:
         log.warning(f'  {carpeta_paciente.name}: no se encontraron pares _hh/_score.emt')
