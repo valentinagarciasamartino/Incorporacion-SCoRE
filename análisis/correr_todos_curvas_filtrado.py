@@ -3,17 +3,6 @@
 """
 correr_todos_curvas_filtrado.py
 
-Version de correr_todos_curvas.py que ADEMAS excluye, angulo por angulo y
-lado por lado, los walkings cuyo RMSE (HH vs SCoRE) supere un umbral fijo
-en grados (--umbral-rmse, default 15) antes de graficar y calcular la
-banda de +-SD. La exclusion es por angulo+lado, no por walking entero: un
-walking con un RMSE altisimo en rotacion de rodilla (por ej. un problema
-de wrap-around del angulo) puede seguir aportando normalmente a los otros
-5 angulos si ahi su RMSE es razonable.
-
-No modifica ni correr_todos_curvas.py ni comparar_hh_score.py: los importa
-como modulos. Tiene que estar en la MISMA carpeta que ambos.
-
 Genera:
   --out-dir : los mismos 12 PNG que correr_todos_curvas.py (6 diff_<angulo>.png
               + 6 diff_promedio_pacientes_<angulo>.png), pero calculados
@@ -24,15 +13,6 @@ Genera:
               el dato.
   --out     : log de texto, incluye al final el detalle de que walkings
               se excluyeron en que angulo/lado y por que RMSE.
-
-Uso:
-    python3 correr_todos_curvas_filtrado.py --carpeta "/ruta/a/Carpetas de pacientes" \\
-        --out-dir graficos_filtrado --out-csv resumen_filtrado.csv --out log_filtrado.txt
-
-    # cambiar el umbral (default 15 grados de RMSE)
-    python3 correr_todos_curvas_filtrado.py --carpeta "/ruta/..." \\
-        --out-dir graficos_filtrado --out-csv resumen_filtrado.csv --out log_filtrado.txt \\
-        --umbral-rmse 10
 """
 
 import argparse
@@ -105,14 +85,6 @@ def recolectar_patient(carpeta_paciente, registros, log):
 
 
 def filtrar_y_armar_acumuladores(registros, umbral_rmse, log):
-    """
-    Aplica el umbral de RMSE angulo por angulo y lado por lado, separando
-    incluidos de excluidos, y arma los mismos diccionarios que usa
-    correr_todos_curvas.graficar / graficar_por_paciente (diffs, curvas_hh,
-    curvas_score, diffs_por_paciente), pero solo con los incluidos.
-    Devuelve ademas la lista de filas para el CSV (con TODOS los registros,
-    incluidos y excluidos, marcados con la columna excluido_umbral).
-    """
     diffs = {a["id"]: {"R": [], "L": []} for a in chs.ANGULOS}
     curvas_hh = {a["id"]: {"R": [], "L": []} for a in chs.ANGULOS}
     curvas_score = {a["id"]: {"R": [], "L": []} for a in chs.ANGULOS}
