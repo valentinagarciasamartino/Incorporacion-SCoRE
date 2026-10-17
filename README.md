@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 ## Configuración de SCoRE
 
-Los parámetros utilizados por el cálculo se encuentran en .../score/score.cfg. Este archivo permite modificar nombres de marcadores, archivos de entrada y parámetros de procesamiento sin modificar directamente el código fuente.
+Los parámetros utilizados por el cálculo se encuentran en `score/score.cfg`. Este archivo permite modificar nombres de marcadores, archivos de entrada y parámetros de procesamiento sin modificar directamente el código fuente.
 
 ## Consideraciones sobre el entorno del laboratorio
 
