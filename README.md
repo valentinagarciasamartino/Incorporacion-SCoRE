@@ -18,7 +18,7 @@ El cálculo utiliza una calibración estática y una calibración funcional de c
 
 ## 2. Integración al entorno del laboratorio
 
-La carpeta integración/ contiene los scripts utilizados para incorporar SCoRE al flujo de procesamiento existente del laboratorio.
+La carpeta `integración/` contiene los scripts utilizados para incorporar SCoRE al flujo de procesamiento existente del laboratorio.
 
 - Processor.py: gestiona el procesamiento de los datos del paciente.
 - ProcessorCli.py: interfaz de línea de comandos utilizada para automatizar el procesamiento de las capturas e incorporar la ejecución del protocolo SCoRE.
@@ -31,7 +31,7 @@ La carpeta integración/ contiene los scripts utilizados para incorporar SCoRE a
 
 ## 3. Análisis de resultados
 
-La carpeta análisis/ contiene los scripts utilizados para analizar los resultados obtenidos durante el desarrollo del proyecto.
+La carpeta `análisis/` contiene los scripts utilizados para analizar los resultados obtenidos durante el desarrollo del proyecto.
 
 - CoordenadaHJC.py: compara las coordenadas del HJC obtenidas mediante diferentes métodos.
 - CurvasCinematicas.py: permite analizar y comparar el efecto de la ubicación del HJC sobre las curvas cinemáticas de la marcha.
