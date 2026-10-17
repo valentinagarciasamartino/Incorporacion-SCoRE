@@ -6,7 +6,7 @@ Los códigos se pueden dividir en 3 grupos.
 1) Códigos utilizados para la implementación computacional del método
    - score_hjc.py: archivo principal del programa, encargado de coordinar el flujo completo de procesamiento y ejecutar el cálculo del HJC.
    - extraFunctions.py: archivo auxiliar que implementa los algoritmos biomecánicos principales, incluyendo OCST (Optimal Common Shape Technique), y SCoRE.
-   - add_marker.py: función auxiliar utilizada para escribir los nuevos marcadores calculados dentro de un archivo .tdf existente. 
+   - Add_marker.py: función auxiliar utilizada para escribir los nuevos marcadores calculados dentro de un archivo .tdf existente. 
    - score.cfg: archivo de configuración que contiene los parámetros que pueden variar entre protocolos de captura, como los nombres de marcadores, nombres de archivos y configuraciones del filtro e interpolación. Tiene la ventaja de que se puede modificar este archivo y no todo el código. 
    - score_config.py: archivo auxiliar que carga score.cfg y expone sus valores como propiedades de Python, para que el resto de los scripts no tengan que leer el archivo de configuración directamente. 
 
