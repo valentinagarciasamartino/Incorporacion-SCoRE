@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-correr_todos_curvas_filtrado.py
+correr_todos_curvas.py
 
 Genera:
-  --out-dir : los mismos 12 PNG que correr_todos_curvas.py (6 diff_<angulo>.png
-              + 6 diff_promedio_pacientes_<angulo>.png).
+  --out-dir :  12 PNG (6 diff_<angulo>.png + 6 diff_promedio_pacientes_<angulo>.png).
   --out-csv : una fila por paciente/walking/lado/angulo.
   --out     : log de texto.
 """
@@ -21,7 +20,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import comparar_hh_score as chs
-import correr_todos_curvas as ctc
+import curvas as ctc
 
 
 def recolectar_patient(carpeta_paciente, registros, log):
