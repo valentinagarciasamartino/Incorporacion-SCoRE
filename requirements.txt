@@ -12,6 +12,7 @@ click-pathlib
 colorlog
 simplemdx
 plotly
+kaleido
 weasyprint
 snapshot-pyppeteer
 pyecharts
