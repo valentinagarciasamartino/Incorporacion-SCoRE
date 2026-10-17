@@ -5,14 +5,9 @@ correr_todos_curvas_filtrado.py
 
 Genera:
   --out-dir : los mismos 12 PNG que correr_todos_curvas.py (6 diff_<angulo>.png
-              + 6 diff_promedio_pacientes_<angulo>.png), pero calculados
-              solo con los walkings que NO superaron el umbral.
-  --out-csv : una fila por paciente/walking/lado/angulo, IGUAL que antes,
-              pero con una columna extra "excluido_umbral" (True/False)
-              para que quede registro de que se saco y que no, sin perder
-              el dato.
-  --out     : log de texto, incluye al final el detalle de que walkings
-              se excluyeron en que angulo/lado y por que RMSE.
+              + 6 diff_promedio_pacientes_<angulo>.png).
+  --out-csv : una fila por paciente/walking/lado/angulo.
+  --out     : log de texto.
 """
 
 import argparse
