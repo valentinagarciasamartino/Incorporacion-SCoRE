@@ -23,7 +23,7 @@ plt.rcParams.update({
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import comparar_hh_score as chs
-import correr_todos_curvas_filtrado as ctf
+import correr_todos_curvas as ctf
 
 
 def curvas_ejemplo_paciente(registros, paciente_ejemplo, umbral_rmse):
