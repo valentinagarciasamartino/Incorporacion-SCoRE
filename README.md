@@ -10,7 +10,7 @@ La carpeta `score/` contiene los archivos correspondientes a la implementación 
 
 - score_hjc.py: archivo principal del programa. Coordina el flujo de procesamiento y ejecuta el cálculo del HJC mediante el método SCoRE.
 - extraFunctions.py: contiene funciones auxiliares y los algoritmos biomecánicos utilizados, incluyendo OCST (Optimal Common Shape Technique) y SCoRE.
-- add_marker.py: función auxiliar utilizada para escribir los nuevos marcadores calculados dentro de un archivo `.tdf`.
+- Add_marker.py: función auxiliar utilizada para escribir los nuevos marcadores calculados dentro de un archivo `.tdf`.
 - score.cfg: archivo de configuración que contiene parámetros que pueden variar entre protocolos, como nombres de marcadores, nombres de archivos y parámetros de filtrado e interpolación.
 - score_config.py: carga el archivo `score.cfg` y permite acceder a sus parámetros desde Python.
 
