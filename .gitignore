@@ -1,0 +1,23 @@
+# Datos de captura y archivos clínicos
+*.tdf
+*.mdx
+*.c3d
+*.csf
+*.enb
+
+# Informes y resultados generados
+*.pdf
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+.venv/
+venv/
+
+# Archivos del sistema y del editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
