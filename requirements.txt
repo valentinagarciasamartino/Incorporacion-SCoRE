@@ -7,9 +7,9 @@ scikit-learn
 bayesian-optimization
 
 # Integración con el laboratorio
-colorlog
 click
 click-pathlib
+colorlog
 simplemdx
 plotly
 weasyprint
