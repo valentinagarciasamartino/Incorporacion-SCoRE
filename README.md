@@ -35,6 +35,9 @@ La carpeta `análisis/` contiene los scripts utilizados para analizar los result
 
 - CoordenadaHJC.py: compara las coordenadas del HJC obtenidas mediante diferentes métodos.
 - CurvasCinematicas.py: permite analizar y comparar el efecto de la ubicación del HJC sobre las curvas cinemáticas de la marcha.
+- comparar_hh_score.py: contiene funciones para comparar las curvas cinemáticas obtenidas mediante el protocolo HH y SCoRE.
+- curvas.py: procesa las comparaciones de curvas para el conjunto de pacientes y genera los gráficos correspondientes.
+- correr_todos_curvas.py: realiza el procesamiento de las curvas.
 
 ## Requisitos
 
