@@ -7,44 +7,6 @@ Compara, para cada walking, la curva de angulo obtenida con HJC=Harrington/
 Davis (HH) contra la curva obtenida con HJC=SCoRE, para las 6 curvas de
 interes (cadera FE/AA/rotacion, rodilla FE/varo-valgo/rotacion), lado por
 lado.
-
-Que hace, paso a paso:
-1) Busca en una carpeta todos los pares de archivos .emt que comparten el
-   mismo nombre base y difieren solo en el sufijo _hh / _score
-   (ej: "0128_walk03_hh.emt" y "0128_walk03_score.emt").
-2) Para cada archivo .emt, parsea el formato BTS ASCII "Angle cycle
-   sequences": header con "Cycle sequences: N" + fila de columnas + N
-   bloques de 101 filas (frames 0-100 de cada zancada normalizada).
-3) Para cada archivo, colapsa las N zancadas a UNA sola curva de 101 puntos
-   por columna, tomando la media (cycle-sequence-mean, igual a lo que
-   BTS SmartAnalyzer llama "Cycle sequence mean").
-4) Para cada walking (par hh/score) y cada una de las 12 columnas
-   (6 angulos x 2 lados), calcula la curva de diferencia:
-       diff(frame) = curva_HH(frame) - curva_SCoRE(frame)
-   Un valor positivo significa "HH da mas [flexion/aduccion/rotacion
-   interna, segun el signo del angulo] que SCoRE" en ese frame.
-5) Agrega todas las curvas de diferencia (de todos los pacientes y
-   walkings) en 6 graficos -uno por tipo de angulo-, cada uno con las
-   curvas de lado R y lado L en colores distintos: la nube de curvas
-   individuales en fondo (semi-transparente) + la curva media +- 1 SD
-   en trazo grueso encima.
-6) Escribe ademas una tabla CSV con un resumen numerico por
-   paciente/walking/lado/angulo (RMSE, diferencia media, diferencia
-   maxima absoluta y en que frame ocurre).
-
-IMPORTANTE - convencion de signo R/L:
-Este script asume que la convencion de signo de ad/aduccion y rotacion
-ya es "anatomica" (ej: aduccion positiva en R significa lo mismo que
-aduccion positiva en L), que es lo habitual en un modelo tipo Davis/PiG
-de BTS. Antes de confiar en los graficos combinados de R+L, conviene
-revisar con 2-3 pacientes que esto sea asi. Si no lo es, hay que invertir
-el signo de un lado antes de correr este script (se puede hacer editando
-el diccionario ANGULOS mas abajo, agregando un flip por columna).
-
-Uso:
-    python comparar_hh_score.py /ruta/a/carpeta/con/emt --out-dir graficos --out-csv resumen.csv
-
-    La carpeta puede tener subcarpetas (se busca de forma recursiva).
 """
 
 import argparse
