@@ -50,9 +50,13 @@ Los parámetros utilizados por el cálculo se encuentran en .../score/score.cfg.
 
 ## Consideraciones sobre el entorno del laboratorio
 
-Los scripts contenidos en `integracion/` fueron desarrollados a partir del flujo de procesamiento utilizado en el laboratorio y, por lo tanto, algunas funciones dependen del entorno de software y de la estructura de archivos allí utilizada. Los recursos institucionales utilizados para la generación de informes, como templates, imágenes, logos y fuentes, no se incluyen en este repositorio.
+Los scripts contenidos en `integracion/` fueron desarrollados a partir del flujo de procesamiento utilizado en el Laboratorio de Análisis de Movimiento y Marcha (LAMM) de Fleni y, por lo tanto, algunas funciones dependen del entorno de software y de la estructura de archivos allí utilizada.
 
-Por este motivo, la generación completa de los informes mediante `Reporter.py` puede requerir recursos adicionales disponibles únicamente en el entorno del laboratorio. Asimismo, algunos scripts conservan rutas y configuraciones propias de dicho entorno, que deben adaptarse en caso de utilizar el código en otra instalación.
+Los recursos institucionales utilizados para la generación de informes, como templates, imágenes, logos y fuentes, no se incluyen en este repositorio. Por este motivo, la generación completa de los informes mediante `Reporter.py` puede requerir recursos adicionales disponibles únicamente en el entorno del laboratorio.
+
+Asimismo, algunos scripts de integración conservan rutas absolutas, directorios de trabajo y configuraciones propias del entorno en el que fueron implementados. Estas referencias se mantienen para reflejar la implementación utilizada durante el proyecto y deben adaptarse en caso de ejecutar el código en otra instalación.
+
+La implementación del método SCoRE y sus archivos de configuración se encuentran en la carpeta `score/`.
 
 ## Datos
 
